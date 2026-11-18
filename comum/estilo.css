@@ -1,0 +1,307 @@
+/* Estilo comum — cores, fonte e componentes de 06-montagem/arquitetura-e-visual/sistema-visual.md.
+   Nenhuma cor de fora da lista abaixo (prática 8). */
+
+@font-face {
+  font-family: "Manrope";
+  src: url("fonte/Manrope-variavel.ttf") format("truetype");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  --tinta: #0E2841;        /* texto principal; etiqueta "!" */
+  --tinta-suave: #4A5A68;  /* texto secundário; etiqueta "simulado" */
+  --tinta-fraca: #8C9AA6;  /* só bordas e detalhes: contraste 2,9, não serve para texto */
+  --destaque: #00688C;     /* links, títulos, etiqueta "i" */
+  --acao: #0080A8;         /* botão principal, texto branco */
+  --ciano: #00C2FF;        /* só detalhe: contraste 2,1, não serve para texto */
+  --fundo: #FFFFFF;
+  --fundo-suave: #F4F8FD;
+  --contorno: #D7E0EA;
+  --tinta-escura: #0A1E31; /* tom mais escuro de --tinta: fundo do menu no topo escuro (D-067) */
+
+  --canto: 8px;
+  --e1: 4px; --e2: 8px; --e3: 12px; --e4: 16px; --e5: 24px; --e6: 32px; --e7: 48px;
+  --largura: 1200px;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--tinta);
+  background: var(--fundo);
+}
+h1, h2, h3 { line-height: 1.25; margin: 0; font-weight: 700; }
+h1 { font-size: 28px; }
+h2 { font-size: 20px; color: var(--destaque); }
+h3 { font-size: 16px; }
+p { margin: 0; }
+a { color: var(--destaque); }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--acao);
+  outline-offset: 2px;
+}
+.suave { color: var(--tinta-suave); }
+.pequeno { font-size: 13px; }
+.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---------- faixas de aviso ---------- */
+.faixa {
+  background: var(--fundo-suave);
+  border-bottom: 1px solid var(--contorno);
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+.faixa > div {
+  max-width: var(--largura); margin: 0 auto; padding: var(--e2) var(--e4);
+  display: flex; gap: var(--e3); align-items: center; flex-wrap: wrap;
+}
+.faixa strong { color: var(--tinta); }
+
+/* ---------- topo ---------- */
+.topo { border-bottom: 1px solid var(--contorno); background: var(--fundo); }
+.topo-linha {
+  max-width: var(--largura); margin: 0 auto; padding: var(--e3) var(--e4);
+  display: flex; align-items: center; gap: var(--e5); flex-wrap: wrap;
+}
+.marca { display: flex; align-items: center; gap: var(--e3); text-decoration: none; color: var(--tinta); }
+.marca img { width: 44px; height: auto; display: block; }
+.marca-nome { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; line-height: 1.1; }
+.marca-sub { font-size: 13px; font-weight: 600; color: var(--destaque); line-height: 1.2; }
+/* nome e "Cobra aí" mais juntos (pedido da Ceci, 2026-11-17) */
+.marca br, .entrada-marca br { display: none; }
+.marca > span:last-child, .entrada-marca > div { display: flex; flex-direction: column; gap: 1px; }
+.pesquisa { flex: 1 1 260px; min-width: 200px; position: relative; }
+.pesquisa input {
+  width: 100%; font: inherit; color: var(--tinta);
+  padding: 10px var(--e4); border: 1px solid var(--contorno); border-radius: 999px; background: var(--fundo-suave);
+}
+.pesquisa input::placeholder { color: var(--tinta-suave); }
+.hoje { font-size: 13px; color: var(--tinta-suave); white-space: nowrap; }
+.hoje strong { color: var(--tinta); }
+.menu { max-width: var(--largura); margin: 0 auto; padding: 0 var(--e4); display: flex; gap: var(--e1); flex-wrap: wrap; }
+.menu a {
+  display: block; padding: var(--e3) var(--e4); text-decoration: none; color: var(--tinta-suave); font-weight: 600;
+  border-bottom: 3px solid transparent;
+}
+.menu a:hover { color: var(--tinta); }
+.menu a[aria-current="page"] { color: var(--destaque); border-bottom-color: var(--destaque); font-weight: 700; }
+
+/* ---------- área da tela ---------- */
+.tela { max-width: var(--largura); margin: 0 auto; padding: var(--e6) var(--e4) var(--e7); outline: none; }
+.cabecalho-tela { display: flex; align-items: baseline; gap: var(--e3); flex-wrap: wrap; margin-bottom: var(--e2); }
+.subtitulo { color: var(--tinta-suave); margin-bottom: var(--e5); max-width: 760px; }
+.secao { margin-top: var(--e6); }
+.secao > h2 { margin-bottom: var(--e3); display: flex; align-items: center; gap: var(--e2); flex-wrap: wrap; }
+.migalha { font-size: 13px; margin-bottom: var(--e3); }
+
+/* ---------- cartão ---------- */
+.cartao { background: var(--fundo); border: 1px solid var(--contorno); border-radius: var(--canto); padding: var(--e5); }
+a.cartao { display: block; text-decoration: none; color: inherit; }
+a.cartao:hover { border-color: var(--destaque); }
+.grade { display: grid; gap: var(--e4); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.grade-3 { display: grid; gap: var(--e4); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.rotulo { font-size: 13px; font-weight: 600; color: var(--tinta-suave); }
+.valor-grande { font-size: 28px; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* ---------- botões ---------- */
+.botao {
+  font: inherit; font-weight: 600; cursor: pointer; border-radius: var(--canto); padding: 10px var(--e4);
+  border: 1px solid var(--contorno); background: var(--fundo); color: var(--destaque);
+}
+.botao.principal { background: var(--acao); border-color: var(--acao); color: #FFFFFF; }
+.botao[disabled] { cursor: not-allowed; opacity: 0.6; }
+.linha-botoes { display: flex; gap: var(--e2); flex-wrap: wrap; align-items: center; }
+
+/* ---------- tabela ---------- */
+.rolagem { overflow-x: auto; border: 1px solid var(--contorno); border-radius: var(--canto); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 10px var(--e3); text-align: left; border-bottom: 1px solid var(--contorno); vertical-align: top; }
+th { background: var(--fundo-suave); font-weight: 600; color: var(--tinta-suave); white-space: nowrap; }
+th.num, td.num { text-align: right; }
+tbody tr:last-child td { border-bottom: 0; }
+td.destaque-linha { font-weight: 700; }
+
+/* ---------- pílulas e etiquetas ---------- */
+.pilula {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; line-height: 1;
+  padding: 5px 10px; border-radius: 999px; border: 1px solid var(--contorno); background: var(--fundo-suave); white-space: nowrap;
+}
+.pilula .icone {
+  display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 50%;
+  font-size: 11px; font-weight: 800; line-height: 1;
+}
+.pilula.info { color: var(--destaque); }
+.pilula.info .icone { border: 1.5px solid var(--destaque); }
+.pilula.pendente { color: var(--tinta); border-color: var(--tinta); background: var(--fundo); }
+.pilula.pendente .icone { background: var(--tinta); color: #FFFFFF; }
+
+/* etiqueta "simulado" e "exemplo": discreta, um pouco transparente, borda tracejada e hachura (não depende de cor) */
+.etiqueta {
+  display: inline-flex; align-items: center; font-size: 11px; font-weight: 600; line-height: 1; letter-spacing: 0.02em;
+  padding: 4px 8px; border-radius: 999px; border: 1px dashed var(--tinta-fraca); color: var(--tinta-suave);
+  background-image: repeating-linear-gradient(135deg, rgba(140,154,166,0.16) 0 4px, transparent 4px 8px);
+  opacity: 0.85; white-space: nowrap; vertical-align: middle; cursor: help;
+}
+
+/* alerta que abre: pílula + cartão com a justificativa (abre por clique, toque ou teclado) */
+details.alerta { display: inline-block; vertical-align: middle; }
+details.alerta > summary { list-style: none; cursor: pointer; display: inline-flex; }
+details.alerta > summary::-webkit-details-marker { display: none; }
+/* a pílula que abre tem um tom um pouco mais forte e uma setinha (pedido da Ceci, 2026-11-17); a que não abre fica no tom claro */
+details.alerta > summary .pilula { background: var(--contorno); border-color: var(--contorno); }
+details.alerta.pendente > summary .pilula { border-color: var(--tinta); }
+details.alerta > summary .pilula::after { content: "▾"; font-size: 11px; margin-left: 2px; }
+details.alerta[open] > summary .pilula::after { content: "▴"; }
+details.alerta[open] { display: block; margin: var(--e2) 0; }
+details.alerta .justificativa {
+  margin-top: var(--e2); padding: var(--e3) var(--e4); border: 1px solid var(--contorno); border-left: 3px solid var(--destaque);
+  border-radius: var(--canto); background: var(--fundo); font-size: 14px; max-width: 640px;
+}
+details.alerta.pendente .justificativa { border-left-color: var(--tinta); }
+
+/* ---------- tela vazia ---------- */
+.vazio {
+  border: 1px dashed var(--contorno); border-radius: var(--canto); padding: var(--e5);
+  color: var(--tinta-suave); background: var(--fundo-suave); text-align: center;
+}
+
+/* ---------- linha do tempo ---------- */
+.linha-do-tempo { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--contorno); }
+.linha-do-tempo li { position: relative; padding: 0 0 var(--e4) var(--e5); }
+.linha-do-tempo li::before {
+  content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--fundo); border: 2px solid var(--destaque);
+}
+.linha-do-tempo .item { display: flex; gap: var(--e4); align-items: baseline; flex-wrap: wrap; justify-content: space-between; }
+.linha-do-tempo a.item-link { text-decoration: none; color: inherit; display: block; padding: var(--e3) var(--e4); border: 1px solid var(--contorno); border-radius: var(--canto); }
+.linha-do-tempo a.item-link:hover { border-color: var(--destaque); }
+
+/* ---------- abas ---------- */
+.abas { display: flex; gap: var(--e1); border-bottom: 1px solid var(--contorno); margin-bottom: var(--e5); flex-wrap: wrap; }
+.aba { padding: var(--e3) var(--e4); font-weight: 600; color: var(--tinta-suave); border-bottom: 3px solid transparent; }
+.aba.ativa { color: var(--destaque); border-bottom-color: var(--destaque); }
+.aba.apagada { opacity: 0.6; }
+a.aba { text-decoration: none; }
+a.aba:hover { color: var(--tinta); }
+
+/* ---------- topo, lote F: sino, "ver como", perfil, Sair ---------- */
+.botao-icone {
+  display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; cursor: pointer;
+  border: 1px solid var(--contorno); border-radius: 999px; background: var(--fundo); color: var(--destaque);
+}
+.botao-icone:hover { border-color: var(--destaque); }
+.topo-conta { padding-top: 0; font-size: 13px; gap: var(--e4); }
+.ver-como { display: inline-flex; align-items: center; gap: var(--e1); color: var(--tinta-suave); }
+.ver-como a {
+  text-decoration: none; font-weight: 600; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--contorno); color: var(--tinta-suave);
+}
+.ver-como a[aria-current="true"] { background: var(--fundo-suave); border-color: var(--destaque); color: var(--destaque); }
+.perfil { font-weight: 600; color: var(--tinta); }
+.links-topo { margin-left: auto; display: inline-flex; gap: var(--e4); align-items: center; flex-wrap: wrap; }
+.links-topo .sair { font-weight: 700; }
+body[data-visao="nenhuma"] .tela { max-width: 520px; }
+
+/* ---------- rodapé ---------- */
+.rodape { border-top: 1px solid var(--contorno); background: var(--fundo-suave); font-size: 13px; color: var(--tinta-suave); }
+.rodape > div { max-width: var(--largura); margin: 0 auto; padding: var(--e4); display: flex; gap: var(--e4); flex-wrap: wrap; justify-content: space-between; }
+
+@media (max-width: 640px) {
+  h1 { font-size: 24px; }
+  .tela { padding-top: var(--e5); }
+  .cartao { padding: var(--e4); }
+}
+
+/* ---------- lote E: dado de verdade ---------- */
+code { font-size: 13px; background: var(--fundo-suave); padding: 1px 4px; border-radius: 4px; }
+.pesquisa { margin: 0; }
+.filtros .acoes-filtro { display: flex; gap: var(--e2); align-items: flex-end; flex-wrap: wrap; }
+.contagem-filtro { margin: var(--e3) 0; }
+.paginas { display: flex; gap: var(--e3); align-items: center; flex-wrap: wrap; margin: var(--e3) 0; }
+.paginas .botao { text-decoration: none; }
+.paginas span.botao[aria-disabled="true"] { opacity: 0.5; cursor: default; }
+a.botao { display: inline-block; text-decoration: none; }
+.botao[aria-pressed="true"] { box-shadow: inset 0 0 0 1px var(--acao); }
+tr.selecionada td { background: var(--fundo-suave); }
+tfoot td { font-weight: 700; background: var(--fundo-suave); border-bottom: 0; }
+h3.sub { margin: var(--e5) 0 var(--e2); font-size: 15px; }
+.regra-frase { margin-bottom: var(--e3); max-width: 760px; }
+.regras-aplicadas { margin-top: var(--e4); display: flex; flex-direction: column; gap: var(--e2); }
+.lista-alertas { display: flex; flex-direction: column; gap: var(--e2); }
+.explicacao { max-width: 820px; }
+.explicacao p + p, .explicacao p + ul, .explicacao ul + p { margin-top: var(--e3); }
+.explicacao ul { margin: var(--e2) 0 0; padding-left: var(--e5); }
+.justificativa p + p, .justificativa p + div, .justificativa div + p { margin-top: var(--e2); }
+.justificativa .rolagem { margin-top: var(--e2); }
+details.mais { margin-top: var(--e4); }
+details.mais > summary { list-style: none; display: inline-block; }
+details.mais > summary::-webkit-details-marker { display: none; }
+details.mais[open] > summary { margin-bottom: var(--e3); }
+.vazio p + p { margin-top: var(--e2); }
+.aviso-parcial { margin-bottom: var(--e3); color: var(--tinta); }
+.resultados { margin: 0; padding-left: var(--e5); }
+.resultados li { padding: 4px 0; }
+
+@media print {
+  #faixas, .topo, .rodape, .nao-imprimir, .filtros, .paginas, .foto-video, .filtro-pessoas { display: none !important; }
+  .tela { padding: 0; max-width: none; }
+  details.alerta .justificativa { display: none; }
+  .rolagem { overflow: visible; border: 0; }
+  a { color: var(--tinta); text-decoration: none; }
+}
+.glossario { margin-top: var(--e3); }
+.ponto-dia { margin: var(--e2) 0; }
+.explicacao { margin-top: var(--e5); } h3.sub.sem-margem { margin-top: 0; }
+
+/* ---------- topo escuro, como a barra do site da Medipreço (pedido da Ceci, 2026-11-17, D-092) ----------
+   Fundo --tinta, textos em branco, menu numa pílula --tinta-escura com o sublinhado em --ciano.
+   Branco sobre #0E2841: contraste 15,0. Fica preso no alto: some ao rolar para baixo e volta ao rolar para cima. */
+.topo {
+  background: var(--tinta); border-bottom: 0; color: #FFFFFF;
+  position: sticky; top: 0; z-index: 20; transition: transform 0.25s ease;
+}
+.topo.escondido { transform: translateY(-100%); }
+@media (prefers-reduced-motion: reduce) { .topo { transition: none; } }
+.topo .marca { color: #FFFFFF; }
+.topo .marca img { filter: brightness(0) invert(1); }
+.topo .marca-sub { color: #FFFFFF; }
+.topo .hoje, .topo .hoje strong, .topo .perfil, .topo .ver-como, .topo .links-topo, .topo .links-topo a, .topo .suave { color: #FFFFFF; }
+.topo .pesquisa input { background: var(--fundo); border-color: var(--fundo); }
+.topo .botao-icone { background: transparent; border-color: rgba(255,255,255,0.5); color: #FFFFFF; }
+.topo .botao-icone:hover { border-color: #FFFFFF; }
+.topo .ver-como a { color: #FFFFFF; border-color: rgba(255,255,255,0.35); }
+.topo .ver-como a[aria-current="true"] { background: var(--tinta-escura); border-color: var(--ciano); color: #FFFFFF; }
+.topo .etiqueta { color: #FFFFFF; border-color: rgba(255,255,255,0.6); background-image: none; }
+.topo .menu {
+  width: fit-content; max-width: calc(var(--largura) - 2 * var(--e4)); margin: 0 auto var(--e3) var(--e4);
+  background: var(--tinta-escura); border-radius: 999px; padding: 0 var(--e4);
+}
+@media (min-width: 1232px) { .topo .menu { margin-left: calc((100% - var(--largura)) / 2 + var(--e4)); } }
+.topo .menu a { color: rgba(255,255,255,0.8); border-bottom-color: transparent; }
+.topo .menu a:hover { color: #FFFFFF; }
+.topo .menu a[aria-current="page"] { color: #FFFFFF; border-bottom-color: var(--ciano); }
+.topo a:focus-visible, .topo button:focus-visible, .topo input:focus-visible { outline-color: var(--ciano); }
+
+/* aviso do sino desce até a seção com um respiro em cima (D-102) */
+.secao[id] { scroll-margin-top: var(--e4); }
+
+/* C15 · tarefa 47: mensagem do botão simulado */
+.msg-simulado { margin: var(--e2) 0 0; padding: var(--e2) var(--e3); border-left: 3px solid var(--destaque); background: var(--fundo-suave); border-radius: var(--canto); font-size: 14px; max-width: 760px; }
+@media print { .msg-simulado { display: none; } }
+
+/* Tarefa 48 · tela estreita: o rótulo do alerta quebra linha em vez de passar da borda */
+details.alerta { max-width: 100%; }
+@media (max-width: 640px) { details.alerta .pilula { white-space: normal; } }
+
+/* Tarefa 48 · impressão da nota, do demonstrativo e do resumo do RH: sem sino, sem botões; linha de tabela não parte e o cabeçalho repete em cada página */
+@media print {
+  .linha-botoes, .etiqueta, #painel-sino, .migalha { display: none !important; }
+  .cartao, tr, .grupo-mudanca { break-inside: avoid; }
+  thead { display: table-header-group; }
+  h1, h2 { break-after: avoid; }
+  body { background: #FFFFFF; }
+}

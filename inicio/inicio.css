@@ -1,0 +1,43 @@
+/* Tela M1 — Início (lote F, tarefa 30) */
+.inicio-topo { display: grid; gap: var(--e4); grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+@media (max-width: 760px) { .inicio-topo { grid-template-columns: 1fr; } }
+.inicio-topo h2 { display: flex; align-items: center; gap: var(--e2); flex-wrap: wrap; margin-bottom: var(--e3); }
+.quadro-avisos { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e2); }
+.quadro-avisos a {
+  display: block; padding: var(--e3) var(--e4); border: 1px solid var(--contorno); border-radius: var(--canto);
+  text-decoration: none; color: var(--tinta); font-weight: 600;
+}
+.quadro-avisos a:hover { border-color: var(--destaque); background: var(--fundo-suave); }
+a.cartao-numero .valor-grande { color: var(--tinta); }
+.graficos { display: grid; gap: var(--e4); }
+.grafico { display: grid; gap: var(--e2); }
+.grafico h3 { font-size: 18px; }
+.minis { display: grid; gap: var(--e3); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.mini { margin: 0; border: 1px solid var(--contorno); border-radius: var(--canto); padding: var(--e3); }
+.mini figcaption { font-size: 14px; margin-bottom: var(--e1); }
+.grafico svg { width: 100%; height: auto; display: block; overflow: visible; }
+.grafico svg.colunas { max-width: 720px; }
+.grafico .linha { fill: none; stroke: var(--destaque); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.grafico .marca { fill: var(--destaque); stroke: var(--fundo); stroke-width: 2; }
+.grafico .marca.parcial { fill: var(--fundo); stroke: var(--destaque); }
+.grafico .alvo { fill: transparent; }
+.grafico .ponto:hover .marca, .grafico .coluna:hover path { filter: brightness(1.25); }
+.grafico .base { stroke: var(--contorno); stroke-width: 1; }
+.grafico text { font-family: inherit; }
+.grafico .valor { font-size: 11px; font-weight: 700; fill: var(--tinta); font-variant-numeric: tabular-nums; }
+.grafico .eixo { font-size: 11px; fill: var(--tinta-suave); }
+.grafico .eixo.forte { font-weight: 700; fill: var(--tinta); font-size: 12px; }
+.grafico path.emitido { fill: var(--tinta); }
+.grafico path.regra { fill: var(--destaque); }
+.legenda-grafico { display: flex; align-items: center; gap: var(--e2); flex-wrap: wrap; }
+.amostra { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+.amostra.emitido { background: var(--tinta); }
+.amostra.regra { background: var(--destaque); margin-left: var(--e3); }
+.ver-tabela summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--destaque); }
+.ver-tabela .rolagem { margin-top: var(--e2); }
+.legenda-mini { margin-top: var(--e2); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; color: var(--tinta-suave); }
+.grafico-vazio {
+  height: 160px; border: 1px dashed var(--tinta-fraca); border-radius: var(--canto);
+  background-image: repeating-linear-gradient(135deg, rgba(140,154,166,0.10) 0 6px, transparent 6px 12px);
+}
+.cartao-cliente-inicio { display: grid; gap: var(--e1); }

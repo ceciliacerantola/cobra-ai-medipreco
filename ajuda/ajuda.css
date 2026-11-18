@@ -1,0 +1,5 @@
+/* Tela M7 — Ajuda (tarefa 46) */
+.lista-perguntas { display: grid; gap: var(--e2); max-width: 760px; }
+.pergunta > summary { cursor: pointer; font-weight: 700; color: var(--tinta); }
+.pergunta > p { margin: var(--e2) 0 0; }
+@media print { .pergunta:not([open]) { display: none; } }

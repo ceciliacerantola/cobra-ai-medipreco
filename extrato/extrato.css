@@ -1,0 +1,9 @@
+/* Só o que é da tela Extratos (M4). Cores e componentes vêm de comum/estilo.css. */
+.periodo { margin-bottom: var(--e3); }
+.lugar-grafico { margin-top: var(--e4); min-height: 120px; display: flex; align-items: center; justify-content: center; border-style: dashed; background: var(--fundo-suave); }
+.filtros { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--e4); margin-bottom: var(--e2); }
+.filtros label { display: flex; flex-direction: column; gap: var(--e1); font-size: 13px; font-weight: 600; color: var(--tinta-suave); }
+.filtros input, .filtros select {
+  font: inherit; color: var(--tinta); padding: 10px var(--e3); border: 1px solid var(--contorno); border-radius: var(--canto); background: var(--fundo-suave);
+}
+.filtros input[type="date"] { min-height: 44px; }

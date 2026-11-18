@@ -1,0 +1,9 @@
+/* Tela M3 — abas A emitir e Como emitir (lote F, tarefa 31) */
+.como-emitir { max-width: 760px; display: grid; gap: var(--e3); }
+.como-emitir h2 { display: flex; align-items: center; gap: var(--e2); }
+.como-emitir ol { margin: 0; padding-left: var(--e5); display: grid; gap: var(--e2); }
+.explicacao-previa { max-width: 880px; margin-bottom: var(--e2); font-size: 14px; }
+.tabela-previa td { min-width: 90px; }
+.particularidades, .itens-previa { margin: var(--e1) 0 0; padding-left: var(--e4); color: var(--tinta-suave); }
+.itens-previa { text-align: left; font-weight: 400; white-space: normal; }
+.sem-particularidade { margin-top: var(--e1); font-size: 13px; color: var(--destaque); font-weight: 600; }

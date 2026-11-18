@@ -1,0 +1,20 @@
+/* Sino e quadro de avisos (tarefa 37) */
+.sino-lugar { position: relative; }
+.sino { position: relative; }
+.sino .contador {
+  position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px;
+  background: var(--ciano); color: var(--tinta); font-size: 11px; font-weight: 800; line-height: 18px; text-align: center;
+}
+.painel-sino {
+  position: absolute; right: 0; top: calc(100% + 8px); width: min(360px, calc(100vw - 32px)); z-index: 30;
+  background: var(--fundo); color: var(--tinta); border: 1px solid var(--contorno); border-radius: var(--canto);
+  box-shadow: 0 8px 24px rgba(14, 40, 65, 0.18); padding: var(--e4); display: grid; gap: var(--e2);
+}
+.topo .painel-sino .suave { color: var(--tinta-suave); }
+.lista-avisos { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e2); }
+.lista-avisos a {
+  display: grid; gap: 2px; padding: var(--e3) var(--e4); border: 1px solid var(--contorno); border-radius: var(--canto);
+  text-decoration: none; color: var(--tinta);
+}
+.lista-avisos a:hover { border-color: var(--destaque); background: var(--fundo-suave); }
+.painel-sino[hidden], .sino .contador[hidden] { display: none; }

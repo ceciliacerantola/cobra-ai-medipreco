@@ -1,0 +1,34 @@
+/* Só o que é da tela Notas (M3). Cores e componentes vêm de comum/estilo.css. */
+.dados-nota { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--e3) var(--e5); margin: var(--e4) 0 var(--e5); }
+.dados-nota dt { font-size: 13px; font-weight: 600; color: var(--tinta-suave); }
+.dados-nota dd { margin: 0; }
+.foto-video { margin-bottom: var(--e2); }
+.camada .passo {
+  display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--destaque); color: #FFFFFF; font-size: 14px; font-weight: 700;
+}
+.foto-video { align-items: center; }
+.aviso-sem-calculo { margin-top: var(--e4); border-left: 3px solid var(--destaque); max-width: 760px; }
+.aviso-sem-calculo p + p { margin-top: var(--e2); }
+.filtro-pessoas { margin-bottom: var(--e2); }
+.quadro-fv { margin: var(--e3) 0 var(--e2); padding: var(--e4) var(--e5); border: 1px solid var(--contorno); border-left: 4px solid var(--acao); border-radius: var(--canto); background: var(--fundo-suave); max-width: 760px; }
+.quadro-fv.foto { border-left-color: var(--tinta-suave); }
+.quadro-fv p + p, .quadro-fv ul + p { margin-top: var(--e2); }
+.quadro-fv ul { margin: var(--e1) 0 0; padding-left: var(--e5); }
+
+/* Situação da nota ao lado do número (D-102; a faixa do caminho saiu) */
+.selo-situacao { display: inline-block; vertical-align: middle; margin-left: var(--e2); font-size: 13px; font-weight: 700; line-height: 1.4;
+  padding: 2px var(--e3); border-radius: 999px; border: 1px solid var(--contorno); color: var(--tinta-suave); background: var(--fundo); }
+.selo-situacao.a-vir { border-color: var(--destaque); color: var(--destaque); }
+
+
+/* Lote I · tarefa 40: por que mudou desde o mês passado */
+.grade-mudancas { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--e3); margin: var(--e3) 0; max-width: 900px; }
+.grupo-mudanca { border: 1px solid var(--contorno); border-radius: var(--canto); padding: var(--e3); background: var(--fundo-suave); }
+.grupo-mudanca > summary { cursor: pointer; display: flex; align-items: baseline; gap: var(--e2); flex-wrap: wrap; }
+.grupo-mudanca .valor-medio { font-size: 22px; font-weight: 700; color: var(--tinta); }
+.grupo-mudanca .abrir { color: var(--destaque); margin-left: auto; }
+.grupo-mudanca[open] .abrir { visibility: hidden; }
+.grupo-mudanca.vazio .valor-medio { color: var(--tinta-suave); }
+.pessoas-mudanca { list-style: none; margin: var(--e2) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--e1) var(--e3); max-height: 240px; overflow-y: auto; }
+@media print { .grupo-mudanca:not([open]) .abrir { display: none; } }

@@ -1,0 +1,25 @@
+/* Tela E1 — Entrada (lote F, tarefa 29) */
+.entrada { margin-top: var(--e6); display: grid; gap: var(--e3); }
+.entrada-marca { display: flex; align-items: center; gap: var(--e3); margin-bottom: var(--e3); }
+.entrada-marca img { width: 56px; height: auto; }
+.entrada-aviso { background: var(--fundo-suave); border: 1px solid var(--contorno); border-radius: var(--canto); padding: var(--e3) var(--e4); font-size: 14px; }
+.entrada-acessos { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e2); }
+.entrada-acessos button, .entrada-email {
+  display: grid; gap: 2px; width: 100%; text-align: left; font: inherit; cursor: pointer; padding: var(--e3) var(--e4);
+  color: var(--tinta); background: var(--fundo); border: 1px solid var(--contorno); border-radius: var(--canto);
+}
+.entrada-email { display: block; }
+.entrada-acessos button:hover, .entrada-email:hover { border-color: var(--destaque); background: var(--fundo-suave); }
+.entrada-acessos [aria-selected="true"] button { border-color: var(--destaque); }
+.entrada-erro {
+  font-size: 14px; font-weight: 600; color: var(--tinta); padding: var(--e2) var(--e3);
+  border: 1px solid var(--tinta); border-radius: var(--canto); background: var(--fundo-suave);
+}
+.entrada-senha {
+  font: inherit; color: var(--tinta-suave); padding: 10px var(--e4); border: 1px solid var(--contorno);
+  border-radius: var(--canto); background: var(--fundo-suave); letter-spacing: 0.2em;
+}
+.entrada-botoes { margin-top: var(--e2); }
+.entrada-links { margin-top: var(--e2); }
+.entrada-titulo { font-size: 22px; }
+.entrada-acessos[hidden] { display: none; }

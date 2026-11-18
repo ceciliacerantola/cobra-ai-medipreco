@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cobra aí · Medipreço (demonstração)</title>
+  <!-- Estilo comum primeiro; depois o de cada tela (uma pasta por funcionalidade). -->
+  <link rel="stylesheet" href="comum/estilo.css">
+  <link rel="stylesheet" href="cliente/cliente.css">
+  <link rel="stylesheet" href="demonstrativo/notas.css">
+  <link rel="stylesheet" href="extrato/extrato.css">
+  <link rel="stylesheet" href="alertas/conferencia.css">
+  <link rel="stylesheet" href="entrada/entrada.css">
+  <link rel="stylesheet" href="inicio/inicio.css">
+  <link rel="stylesheet" href="notas-a-emitir/notas-a-emitir.css">
+  <link rel="stylesheet" href="calendario/calendario.css">
+  <link rel="stylesheet" href="visao-empresa-rh/visao-empresa-rh.css">
+  <link rel="stylesheet" href="sobre/sobre.css">
+  <link rel="stylesheet" href="ajuda/ajuda.css">
+  <link rel="stylesheet" href="avisos/avisos.css">
+</head>
+<body>
+  <div id="faixas"></div>
+  <header id="topo" class="topo"></header>
+  <main id="tela" class="tela" tabindex="-1">
+    <noscript><p class="vazio">Esta página precisa de JavaScript ligado no navegador.</p></noscript>
+  </main>
+  <footer id="rodape" class="rodape"></footer>
+
+  <!-- Scripts comuns, sem "módulos", para a página abrir com dois cliques. -->
+  <!-- dados.js é gerado pelo cálculo (calculo/gerar-dados-da-pagina.py): a página não calcula valor de nota. -->
+  <script src="dados.js"></script>
+  <script src="comum/formato.js"></script>
+  <script src="comum/topo.js"></script>
+  <script src="comum/explicacoes.js"></script>
+  <script src="comum/pesquisa.js"></script>
+  <script src="comum/baixar.js"></script>
+  <!-- Uma tela por arquivo. Cada uma se registra em App.telas. -->
+  <script src="cliente/cliente.js"></script>
+  <script src="demonstrativo/notas.js"></script>
+  <script src="extrato/extrato.js"></script>
+  <script src="alertas/conferencia.js"></script>
+  <script src="avisos/avisos.js"></script>
+  <script src="entrada/entrada.js"></script>
+  <script src="calendario/calendario.js"></script>
+  <script src="inicio/inicio.js"></script>
+  <script src="notas-a-emitir/notas-a-emitir.js"></script>
+  <script src="visao-empresa-rh/visao-empresa-rh.js"></script>
+  <script src="sobre/sobre.js"></script>
+  <script src="ajuda/ajuda.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+/* Tela M8 — Sobre esta demo (lote F, tarefa 34) */
+.sobre .cartao { display: grid; gap: var(--e2); align-content: start; }
+.sobre ul { margin: 0; padding-left: var(--e4); display: grid; gap: var(--e1); align-content: start; }
+.sobre .em-escrita { border-style: dashed; }

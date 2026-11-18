@@ -1,0 +1,17 @@
+/* Visão Empresa/RH, R1 a R5 (lote F, tarefa 33; dado de verdade no lote J, tarefas 43 e 44) */
+.rh-nota { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--e3); align-items: center; padding: var(--e4); }
+.rh-nota .linha-botoes { grid-column: 1 / -1; }
+.rh-envio { display: grid; gap: var(--e3); }
+.rh-filtros { margin-bottom: var(--e4); }
+.rh-filtros input, .rh-filtros select { font: inherit; padding: 6px 10px; border: 1px solid var(--contorno); border-radius: var(--canto); background: var(--fundo-suave); color: var(--tinta-suave); }
+.rh-previa .pilula { margin-left: var(--e1); }
+.rh-previa-lista { margin-bottom: var(--e4); max-width: 520px; }
+.rh-regra { margin-top: var(--e3); }
+.rh-grafico .mini { max-width: 560px; }
+.rh-mensagem { margin-top: var(--e3); }
+.cartao .valor-medio { font-size: 18px; font-weight: 700; color: var(--tinta); }
+.rh-perfil th { text-align: left; width: 200px; }
+/* resumo consolidado da nota (D-105) */
+.rh-resumo { margin-top: var(--e4); }
+.rh-ajuste { border-top: 4px solid var(--destaque); }
+.rh-mes p + p { margin-top: var(--e2); }

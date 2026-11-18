@@ -1,0 +1,45 @@
+/* Só o que é da tela Clientes e Cliente (M2). Cores e componentes vêm de comum/estilo.css. */
+.cartao-cliente h3 { font-size: 18px; margin-bottom: var(--e1); }
+.cartao-cliente .modelo { min-height: 48px; margin-bottom: var(--e3); }
+.cartao-cliente .linha-etiquetas { display: flex; gap: var(--e2); flex-wrap: wrap; margin-bottom: var(--e4); }
+.cartao-cliente .alertas-linha { margin-top: var(--e3); }
+.cnpjs { list-style: none; margin: 0; padding: 0; color: var(--tinta); }
+.cnpjs li { padding: 2px 0; font-variant-numeric: tabular-nums; }
+.nota-de-rodape { margin-top: var(--e2); }
+.texto-aviso { background: var(--fundo-suave); margin-bottom: var(--e3); max-width: 760px; }
+.texto-aviso p + p { margin-top: var(--e3); }
+.cartao-cliente .saldo-rotulo { margin-top: var(--e3); }
+.tabela-ficha td:first-child { font-weight: 600; white-space: nowrap; }
+.tabela-ficha .trecho { display: inline-block; margin-top: 4px; max-width: 520px; }
+h3.competencia { margin: var(--e5) 0 var(--e2); font-size: 16px; }
+.grupo-linha { margin-bottom: var(--e3); }
+.saldo { margin-bottom: var(--e3); }
+.motivos { margin: 0 0 var(--e1); padding-left: var(--e4); font-size: 13px; }
+.sem-calculo { margin-top: var(--e3); }
+.texto-copiavel { white-space: pre-wrap; font-family: inherit; font-size: 15px; margin: var(--e2) 0 0; }
+.atalhos { margin-top: var(--e3); }
+
+/* Lote I · tarefa 41: modelos que já sabemos cobrar */
+.modelos-de-cobranca { margin-top: var(--e6); }
+.tabela-modelos td:first-child { font-weight: 600; white-space: nowrap; vertical-align: top; }
+.lista-modelos { list-style: none; margin: 0; padding: 0; }
+.lista-modelos li { display: flex; flex-wrap: wrap; gap: var(--e1) var(--e3); padding: var(--e1) 0; }
+.lista-modelos li + li { border-top: 1px dashed var(--contorno); }
+.lista-modelos .valor-modelo { min-width: 260px; }
+@media (max-width: 600px) { .tabela-modelos td:first-child { white-space: normal; } .lista-modelos .valor-modelo { min-width: 0; } }
+/* Ajuste 2026-11-17: "Tipos de cobrança" com 4 cartões coloridos e o resto num toggle */
+.grade-tipos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--e3); margin-top: var(--e4); }
+@media (max-width: 1000px) { .grade-tipos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .grade-tipos { grid-template-columns: 1fr; } }
+.cartao-tipo { border-top: 5px solid var(--destaque); padding-top: var(--e3); }
+.cartao-tipo.cor-1 { border-top-color: var(--tinta); }
+.cartao-tipo.cor-2 { border-top-color: var(--destaque); }
+.cartao-tipo.cor-3 { border-top-color: var(--acao); }
+.cartao-tipo.cor-4 { border-top-color: var(--ciano); }
+.rotulo-tipo { font-weight: 700; color: var(--tinta); margin-bottom: var(--e2); }
+.cartao-tipo .lista-modelos li { flex-direction: column; gap: 2px; }
+.cartao-tipo .lista-modelos .valor-modelo { min-width: 0; font-weight: 600; font-size: 14px; }
+.detalhes-tipos { margin-top: var(--e4); }
+.detalhes-tipos > summary { cursor: pointer; color: var(--destaque); font-weight: 600; }
+.detalhes-tipos .rolagem { margin-top: var(--e3); }
+.tabela-modelos th { background: var(--tinta); color: #FFFFFF; }
