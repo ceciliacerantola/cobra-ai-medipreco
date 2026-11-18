@@ -14,7 +14,7 @@
 
   function marca() {
     return '<div class="entrada-marca"><img src="comum/marca/logo-simbolo.png" alt="">' +
-      '<div><span class="marca-nome">Medipreço</span><br><span class="marca-sub">' + A().esc(A().nome) + "</span></div></div>";
+      '<div><span class="marca-nome">Medipreço</span><br>' + A().nomeNaMarca + "</div></div>";
   }
 
   function desenhar() {

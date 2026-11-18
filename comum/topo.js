@@ -6,7 +6,9 @@
 (function () {
   "use strict";
 
-  var NOME_DA_PAGINA = "Cobra aí"; /* nome de trabalho: fica escrito só aqui */
+  var NOME_DA_PAGINA = "cobraAI"; /* o nome fica escrito só aqui (D-115): lê-se "cobra aí" e "cobra AI" */
+  /* o nome na marca: "cobra" na cor do texto e "AI" na cor de destaque */
+  var NOME_NA_MARCA = '<span class="marca-sub">cobra<span class="marca-ai">AI</span></span>';
 
   /* Duas visões (spec, Topo). A visão Empresa/RH usa endereços que começam por "rh/". */
   var MENU = [
@@ -79,6 +81,7 @@
     telas: {},
     esc: esc,
     nome: NOME_DA_PAGINA,
+    nomeNaMarca: NOME_NA_MARCA,
     D: null,
     I: null,
 
@@ -236,7 +239,7 @@
         '<div class="topo-linha">' +
           '<a class="marca" href="#/' + (rh ? "rh/inicio" : "inicio") + '" aria-label="Medipreço, ' + esc(NOME_DA_PAGINA) + ': ir para o Início">' +
             '<img src="comum/marca/logo-simbolo.png" alt="">' +
-            '<span><span class="marca-nome">Medipreço</span><br><span class="marca-sub">' + esc(NOME_DA_PAGINA) + "</span></span>" +
+            '<span><span class="marca-nome">Medipreço</span><br>' + NOME_NA_MARCA + "</span>" +
           "</a>" +
           pesquisa +
           '<span class="hoje">Hoje: <strong>' + esc(hoje) + "</strong></span>" +

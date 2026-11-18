@@ -71,7 +71,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .marca { display: flex; align-items: center; gap: var(--e3); text-decoration: none; color: var(--tinta); }
 .marca img { width: 44px; height: auto; display: block; }
 .marca-nome { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; line-height: 1.1; }
-.marca-sub { font-size: 13px; font-weight: 600; color: var(--destaque); line-height: 1.2; }
+.marca-sub { font-size: 13px; font-weight: 600; color: var(--tinta); line-height: 1.2; }
+.marca-ai { color: var(--destaque); font-weight: 800; } /* D-115 */
 /* nome e "Cobra aí" mais juntos (pedido da Ceci, 2026-11-17) */
 .marca br, .entrada-marca br { display: none; }
 .marca > span:last-child, .entrada-marca > div { display: flex; flex-direction: column; gap: 1px; }
@@ -269,6 +270,7 @@ details.mais[open] > summary { margin-bottom: var(--e3); }
 .topo .marca { color: #FFFFFF; }
 .topo .marca img { filter: brightness(0) invert(1); }
 .topo .marca-sub { color: #FFFFFF; }
+.topo .marca-ai { color: var(--ciano); }
 .topo .hoje, .topo .hoje strong, .topo .perfil, .topo .ver-como, .topo .links-topo, .topo .links-topo a, .topo .suave { color: #FFFFFF; }
 .topo .pesquisa input { background: var(--fundo); border-color: var(--fundo); }
 .topo .botao-icone { background: transparent; border-color: rgba(255,255,255,0.5); color: #FFFFFF; }
