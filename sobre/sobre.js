@@ -1,5 +1,5 @@
 /* Tela M8 — Sobre esta demo (tarefa 45). Vale para as duas visões e também abre da Entrada.
-   Seções 1, 2 e 4 aprovadas pela Ceci; a seção 3 (como a IA foi usada) é ela quem escreve ao acabar a onda 3 (D-108).
+   Seções 1, 2 e 4 aprovadas pela Ceci; a seção 3 (como a IA foi usada) aprovada em 2026-11-18 (D-117).
    Os números da seção 4 foram conferidos por consulta direta na base em 2026-11-17. Protótipo em _arquivo/. */
 (function () {
   "use strict";
@@ -16,8 +16,11 @@
       "Enviar e-mail, emitir nota fiscal, enviar movimentação, pedir o demonstrativo e tirar dúvida.",
       "Tudo o que tem a etiqueta “simulado”. Nada é enviado, gravado nem emitido."
     ] },
-    { titulo: "Como a IA foi usada", emEscrita: true, itens: [
-      "No processo e na solução. Texto em escrita."
+    { titulo: "Como a IA foi usada", itens: [
+      "No processo: um agente só (Claude Code), seguindo um guia de 0 a 6 que eu modelei com os meus materiais de estudo, um passo por vez e sempre com o meu OK.",
+      "Uma spec em quatro camadas virou 53 tarefas em lotes: o agente planeja, eu aprovo, ele executa. Para cada tarefa, o caminho feliz, o caso raro e o erro.",
+      "Aprendizado constante: o agente mantém uma lista do que aprendeu com as minhas decisões. Nenhum número é escrito de memória; todo número sai do cálculo e é refeito por outro caminho.",
+      "Na solução: a IA lê o contrato e propõe a ficha, e escreve as explicações a partir do cálculo. Quem aprova é uma pessoa; a conta é código com testes."
     ] },
     { titulo: "De onde vêm os dados", itens: [
       "Do kit do case, com dados fictícios, de junho até 12/11/2026.",

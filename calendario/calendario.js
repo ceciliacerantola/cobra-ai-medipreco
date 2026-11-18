@@ -64,8 +64,8 @@
         }).join("") + "</span>" : "";
       } else {
         conteudo = lista.map(function (x) {
-          return '<span class="marcacao ' + esc(x.tipo) + '" title="' + esc(x.titulo) + '">' + esc(x.rotulo) + "</span>" +
-            (x.difere ? A().alerta("i", "data diferente da ficha", "<p>" + esc(x.difere) + "</p>") : "");
+          /* D-116: sem o "i" de data diferente dentro do dia (apertava a célula); a diferença fica no texto ao passar o cursor */
+          return '<span class="marcacao ' + esc(x.tipo) + '" title="' + esc(x.titulo + (x.difere ? ". " + x.difere : "")) + '">' + esc(x.rotulo) + "</span>";
         }).join("");
       }
       celulas.push('<div class="dia' + (eHoje ? " hoje-dia" : "") + (lista.length ? " com-marca" : "") + '"' +
